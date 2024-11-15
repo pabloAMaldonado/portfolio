@@ -1,0 +1,9 @@
+
+<div *ngFor="let project of projects$ | async" class="project-container">
+  <div class="header">
+    <h2>{{ project.title }}</h2>
+    <a [href]="project.link" target="_blank">Link</a>
+  </div>
+    <p>{{ project.description }}</p>
+    <img [src]="project.sc" alt="Project Screenshot">
+  </div>

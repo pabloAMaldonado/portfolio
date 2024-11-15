@@ -1,0 +1,38 @@
+
+<div>
+    <h1> Pablo Antonio Maldonado Suazo</h1>
+    <ul>
+        <li><a
+            tabindex="0"
+            (focus)="activeSection = 'section1'"
+            (click)="scrollToSection('section1')"
+            (keypress)="onKeyPress($event, 'section1')"
+            class="nav-link"
+            [class.active]="activeSection === 'section1'"
+            >{{ 'NAVBAR.ITEM1' | translate }}</a>
+        </li>
+        <li><a
+            tabindex="0"
+            (focus)="activeSection = 'section2'"
+            (click)="scrollToSection('section2')"
+            (keypress)="onKeyPress($event, 'section2')"
+            class="nav-link"
+            [class.active]="activeSection === 'section2'"
+            >{{ 'NAVBAR.ITEM3' | translate }}</a>
+        </li>
+        <li><a
+            tabindex="0"
+            (focus)="activeSection = 'section3'"
+            (click)="scrollToSection('section3')"
+            (keypress)="onKeyPress($event, 'section3')"
+            class="nav-link"
+            [class.active]="activeSection === 'section3'"
+            >{{ 'NAVBAR.ITEM2' | translate }}</a>
+        </li>
+      </ul>
+
+    <select name="" id="" (change)="onChangeLang($event)">
+        <option [selected]="lang === 'en'" value="en">English</option>
+        <option [selected]="lang === 'es'" value="es">Espanol</option>
+    </select>
+</div>

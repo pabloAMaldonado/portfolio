@@ -1,0 +1,31 @@
+
+<div class="rowContainer">
+    <ng-container *ngFor="let tech of techs$ | async">
+        <div class="logoContainer"
+        [class.active]="tech.isHover"
+        tabindex="0"
+        (pointerenter)="toggleHover(tech)"
+        (pointerleave)="toogleHoverOff(tech)"
+        >
+          <ng-container *ngIf="tech.isHover; else defaultTemplate">
+            <div class="onLogo">
+              <div [innerHTML]="tech.logo"></div>
+              <h1>{{ tech.name }}</h1>
+            </div>
+              
+          </ng-container>
+    
+          <ng-template #defaultTemplate
+          (click)="toogleHoverOff(tech)"
+
+          >
+            <div>
+                <div class="logo" [innerHTML]="tech.onLogo"></div>
+            </div>
+          </ng-template>
+    
+        </div>
+    </ng-container>
+    
+</div>
+<h3 class="mainTxt">{{mainTxt$ | async}}</h3>

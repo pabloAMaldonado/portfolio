@@ -1,0 +1,54 @@
+
+.logoContainer>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.logo{
+    width: 100%;
+}
+
+.onLogo>div {
+    width: 100%;
+}
+
+.logoContainer {
+width: 70px;
+  transition: width 0.5s;
+}
+
+.logoContainer.active {
+    width: 120px;
+}
+
+.logoContainer>div {
+    width: 100%
+}
+
+.logoContainer>div>h1 {
+    margin: 5px
+}
+
+.rowContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-x: scroll;
+}
+
+.mainTxt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    text-align: center;
+    width: 70%;
+    margin: 10px auto;
+    padding: 20px;
+}

@@ -1,0 +1,22 @@
+html, body {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    scroll-snap-align: center center;
+}
+
+.sections {
+    display: flex;
+    flex-direction: column;
+}
+
+.sections>* {
+    margin: 10% 0;
+}
+
+.navBar {
+    width: 100%;
+}
+

@@ -1,0 +1,43 @@
+
+@media (max-width: 1279px) {
+    .project-container {
+        width: 80%;
+    }
+}
+
+@media (min-width: 1280px) {
+    .project-container {
+        width: 60%;
+    }
+}
+
+.project-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+h2 {
+    margin: 0;
+    text-align: center;
+    flex-grow: 1;
+}
+
+a {
+    margin-left: auto;
+    text-align: right;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
