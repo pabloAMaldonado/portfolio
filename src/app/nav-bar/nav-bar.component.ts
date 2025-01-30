@@ -63,7 +63,17 @@ export class NavBarComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnInit(): void {
     this.lang = this.translationService.getCurrentLanguage()
 
-    
+    setTimeout(() => {
+      const element = document.elementFromPoint(window.innerWidth / 2, window.innerHeight / 2);
+
+      if (element) {
+        const section = element.closest('section')
+        if (section && section.id) {
+
+          this.activeSection = section.id;
+        }
+      }
+    }, 500);
   }
 
   onChangeLang(event: Event) {

@@ -5,5 +5,23 @@
     <a [href]="project.link" target="_blank">Link</a>
   </div>
     <p>{{ project.description }}</p>
-    <img [src]="project.sc" alt="Project Screenshot">
+    <img
+      [ngSrc]="project.sc"
+      alt="Project Screenshot"
+      width="1200"
+      height="750"
+      [srcset]="
+        project.sc + '?w=480 480w, ' + 
+        project.sc + '?w=768 768w, ' + 
+        project.sc + '?w=1024 1024w, ' +
+        project.sc + '?w=1440 1440w'
+      "
+      sizes="
+        (max-width: 480px) 100vw, 
+        (max-width: 768px) 75vw, 
+        (max-width: 1024px) 50vw, 
+        33vw
+      "
+      priority=""
+    >
   </div>
