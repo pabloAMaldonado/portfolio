@@ -1,3 +1,10 @@
+
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('../assets/font/JetBrainsMono-ExtraBold.woff2') format('woff2');
+}
+
 html, body {
     scroll-behavior: smooth;
     margin: 0;
@@ -7,6 +14,18 @@ html, body {
     scroll-snap-align: center center;
 }
 
+div {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--font-color);
+    background-color: var(--bg-color);
+
+}
+
+.navBar {
+    background-color: var(--nav-color);
+    width: 100%;
+}
+
 .sections {
     display: flex;
     flex-direction: column;
@@ -14,9 +33,9 @@ html, body {
 
 .sections>* {
     margin: 10% 0;
-}
-
-.navBar {
+    background-color: var(--section-color);
     width: 100%;
+    height: auto;
+    padding: 40px 0;
 }
 

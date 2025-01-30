@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+    --bg-color: #0c0b05;
+    --nav-color: rgba(210, 198, 154, 0.9);
+    --section-color: rgba(47, 101, 107, 0.8);
+    --font-color: #f5f2e9;
+}

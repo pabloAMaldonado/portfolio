@@ -5,10 +5,12 @@ import { TranslationService } from '../services/translation.service'
 import { map, Observable } from 'rxjs'
 import { CommonModule } from '@angular/common'
 
+import { ContactoComponent } from '../contacto/contacto.component'
+
 @Component({
   selector: 'app-me-panel',
   standalone: true,
-  imports: [TranslateModule, CommonModule],
+  imports: [TranslateModule, CommonModule, ContactoComponent],
   templateUrl: './me-panel.component.html',
   styleUrls: ['./me-panel.component.css']
 })

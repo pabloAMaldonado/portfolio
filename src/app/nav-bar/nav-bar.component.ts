@@ -1,7 +1,8 @@
 
-import { AfterViewInit, Component, OnDestroy, OnInit, Renderer2 } from '@angular/core'
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core'
 import { TranslateModule } from '@ngx-translate/core'
 import { TranslationService } from '../services/translation.service'
+import { TextAnimatorService } from '../text-animator'
 
 @Component({
   selector: 'app-nav-bar',
@@ -12,10 +13,14 @@ import { TranslationService } from '../services/translation.service'
 })
 
 export class NavBarComponent implements OnInit, AfterViewInit, OnDestroy {
-  constructor(private translationService: TranslationService, private renderer: Renderer2) {}
+  @ViewChild('animatedText', { static: false }) animateText!: ElementRef
+
+  constructor(
+    private translationService: TranslationService,
+  ) {}
+
   activeSection = ''
   lang = ''
-
 
   private observer: IntersectionObserver | null = null
 
@@ -37,6 +42,16 @@ export class NavBarComponent implements OnInit, AfterViewInit, OnDestroy {
         this.observer.observe(section)
       }
     })
+
+    if (!this.animateText) {
+      throw new Error('Element with ID "animatedText" not found.');
+    }
+    
+    const animateText = new TextAnimatorService(this.animateText.nativeElement)
+    animateText.animate()
+    this.animateText.nativeElement.addEventListener('mouseenter', () => {
+      animateText.animate()
+    })
   }
 
   ngOnDestroy() {
@@ -47,6 +62,8 @@ export class NavBarComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngOnInit(): void {
     this.lang = this.translationService.getCurrentLanguage()
+
+    
   }
 
   onChangeLang(event: Event) {
@@ -74,4 +91,5 @@ export class NavBarComponent implements OnInit, AfterViewInit, OnDestroy {
       this.scrollToSection(sectionId);
     }
   }
+
 }

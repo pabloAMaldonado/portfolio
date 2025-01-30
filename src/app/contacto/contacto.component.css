@@ -1,0 +1,47 @@
+
+.imgCont {
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.imgCont img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.contacto-container {
+    display: flex;
+    margin: 0 auto;
+}
+
+ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.contactos {
+    display: flex;
+}
+
+li {
+    display: flex;
+    align-items: center;
+}
+
+li > img {
+    width: 25px;
+    height: auto;
+}
+
+li > a {
+    font-size: 22px;
+    text-decoration: none;
+    color: var(--font-color);
+    margin: 5px;
+}

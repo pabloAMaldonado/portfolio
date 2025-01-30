@@ -1,18 +1,23 @@
+
 div {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    align-content: center;
     position: sticky;
     top: 0;
     backdrop-filter: blur(2px);
     z-index: 10;
     width: 100%;
+    min-height: 100px;
+    background-color: var(--nav-color);
 }
 
 div > h1 {
     margin: 10px;
+    width: auto;
+    order: 1;
 }
 
 div > ul {
@@ -21,17 +26,36 @@ div > ul {
     justify-content: space-around;
     align-items: center;
     width: 40%;
-    margin: 0;
     padding: 0;
+    margin: 0;
     list-style-type: none;
+    font-size: 20px;
+    width: 40%;
+    order: 2
 }
 
 select {
     margin-left: auto;
     margin-bottom: auto;
+    order: 3;
 }
 
 .nav-link.active {
     font-weight: bold;
     text-decoration: underline;
+    text-underline-offset: 12px;
+}
+
+
+@media (max-width: 1099px) {
+    h1 {
+        order: 1;
+    }
+    select {
+        order: 2;
+    }
+    ul {
+        order: 3;
+        margin-left: auto;
+    }
 }
