@@ -17,6 +17,9 @@ import { CommonModule, NgOptimizedImage } from '@angular/common'
 export class PrPanelComponent implements OnInit {
   lang = ''
   projects$!:Observable<any>
+  currentPr!:object
+  prLength!: number
+  currentIndex = 0
 
   constructor(private translationService: TranslationService, private translate: TranslateService) {}
 
@@ -26,6 +29,9 @@ export class PrPanelComponent implements OnInit {
     this.translate.onLangChange.subscribe(() => {
       this.loadTranslatedData()
     })
+
+    console.log(this.currentIndex, this.prLength)
+
   }
 
   onChangeLang(event: Event) {
@@ -36,9 +42,29 @@ export class PrPanelComponent implements OnInit {
 
   loadTranslatedData() {
     this.projects$ = this.translationService.getTranslation('PROJECTS').pipe(
-      map((project) => Object.values(project))
+      map((project) => {
+        console.log(project)
+        return Object.values(project)
+      })
     )
+    this.projects$.subscribe((projects) => {
+      if (projects.length > 0) {
+        this.currentPr = projects[this.currentIndex];
+        this.prLength = projects.length
+        console.log(this.prLength)
+      }
+    });
+  }
 
+  changeIndex(index: number, op: string) {
+    if (op === 'up') {
+      console.log('up', index)
+      return this.currentIndex = index + 1 //validation on element
+    } else if (op === 'down') {
+      console.log('down', index)
+      return this.currentIndex = index - 1 //validation on element
+    }
+    return null
   }
 }
 

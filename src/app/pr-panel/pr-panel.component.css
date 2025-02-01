@@ -11,6 +11,12 @@
     }
 }
 
+.prPanel {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+}
+
 .project-container {
     display: flex;
     flex-direction: column;

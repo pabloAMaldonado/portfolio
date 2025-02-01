@@ -14,7 +14,13 @@
         "title": "Backend Gym App",
         "description": "Swagger Documentation for Gym App, used Node.js Express.js and MongoDB.",
         "sc": "material/scBackEndGymApp.png",
-        "link": "https://server-nosql.fly.dev/api-docs/"
+        "link": "cv-manager.vercel.app"
+      },
+      "P2" : {
+        "title": "Cv Manager",
+        "description": "CV Manager developed with React and TypeScript, featuring efficient state management powered by Redux. Designed for seamless CV creation, organization, and customization.",
+        "sc": "material/scCvManager.png",
+        "link": "https://cv-manager.vercel.app/"
       }
     },
     "TECH_TXT" : "Technologies",
