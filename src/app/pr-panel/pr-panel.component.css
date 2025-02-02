@@ -14,14 +14,15 @@
 .prPanel {
     display: flex;
     flex-direction: row;
-    align-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow: hidden;
 }
 
 .project-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: auto;
     flex-wrap: wrap;
 }
 
@@ -45,7 +46,11 @@ a {
 
 img {
     width: 100%;
-    height: auto;
-    max-width: 1200px;
+    height: 600px;
+    width: 960px;
     border-radius: 8px;
+}
+
+button {
+    height: 35px;
 }

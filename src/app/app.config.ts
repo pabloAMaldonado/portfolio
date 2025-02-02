@@ -6,6 +6,7 @@ import { routes } from './app.routes';
 import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { provideAnimations } from '@angular/platform-browser/animations'
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './i18n/', '.json');
@@ -14,6 +15,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 export const appConfig: ApplicationConfig = {
   providers: [
     provideHttpClient(),
+    provideAnimations(),
     ...(TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -22,6 +24,7 @@ export const appConfig: ApplicationConfig = {
       }
     }).providers ?? []),
     provideZoneChangeDetection({ eventCoalescing: true }),
+
     provideRouter(routes),
   ]
 };

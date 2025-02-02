@@ -1,31 +1,23 @@
 
 <div class="prPanel">
-<button (click)="changeIndex(currentIndex, 'down')" [disabled]="currentIndex < 0" > Prev</button>
-  <div *ngFor="let project of projects$ | async" class="project-container">
-    <div class="header">
-      <h2>{{ project.title }}</h2>
-      <a [href]="project.link" target="_blank">Link</a>
-    </div>
-      <p>{{ project.description }}</p>
-      <img
-        [ngSrc]="project.sc"
-        alt="Project Screenshot"
-        width="1200"
-        height="750"
-        [srcset]="
-          project.sc + '?w=480 480w, ' + 
-          project.sc + '?w=768 768w, ' + 
-          project.sc + '?w=1024 1024w, ' +
-          project.sc + '?w=1440 1440w'
-        "
-        sizes="
-          (max-width: 480px) 100vw, 
-          (max-width: 768px) 75vw, 
-          (max-width: 1024px) 50vw, 
-          33vw
-        "
-        priority="true"
-      >
+<button (click)="changeIndex(currentIndex, 'down')" [disabled]="currentIndex <= 0" > Prev</button>
+<span class="project-container" *ngIf="currentPr" @slideAnimation >
+  <div >
+    <span class="header">
+      <h2>{{ currentPr?.title }}</h2>
+      <a [href]="currentPr?.link" target="_blank">Link</a>
+    </span>
+    <p>{{ currentPr?.description }}</p>
   </div>
+
+  <img
+    [ngSrc]="currentPr?.sc"
+    alt="Project Screenshot"
+    width="1200"
+    height="750"
+    priority="true"
+  >
+</span>
 <button (click)="changeIndex(currentIndex, 'up')" [disabled]="currentIndex >= prLength - 1">Next</button>
 </div>
+<!-- aspect-ratio: 1.60 -->

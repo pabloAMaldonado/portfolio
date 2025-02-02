@@ -19,7 +19,7 @@
       "P2" : {
         "title": "Cv Manager",
         "description": "CV Manager developed with React and TypeScript, featuring efficient state management powered by Redux. Designed for seamless CV creation, organization, and customization.",
-        "sc": "material/scCvManager.png",
+        "sc": "material/CVsc.png",
         "link": "https://cv-manager.vercel.app/"
       }
     },
