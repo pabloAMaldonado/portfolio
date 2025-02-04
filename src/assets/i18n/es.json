@@ -14,7 +14,7 @@
         "title": "Backend Gym App",
         "description": "Documentacion en Swagger para Gym App, use Node.js Express.js and MongoDB.",
         "sc": "material/scBackEndGymApp.png",
-        "link": "cv-manager.vercel.app"
+        "link": "https://mellow-flow-production.up.railway.app/"
       },
       "P2" : {
         "title": "Cv Manager",

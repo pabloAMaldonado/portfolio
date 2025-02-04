@@ -2,8 +2,8 @@
 <div class="prPanel">
 <button (click)="changeIndex(currentIndex, 'down')" [disabled]="currentIndex <= 0" > Prev</button>
 <span class="project-container" *ngIf="currentPr" @slideAnimation >
-  <div >
-    <span class="header">
+  <div class="header">
+    <span class="txt">
       <h2>{{ currentPr?.title }}</h2>
       <a [href]="currentPr?.link" target="_blank">Link</a>
     </span>

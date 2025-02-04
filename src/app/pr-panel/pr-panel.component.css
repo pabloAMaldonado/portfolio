@@ -17,6 +17,7 @@
     align-items: center;
     justify-content: space-evenly;
     overflow: hidden;
+    height: 700px;
 }
 
 .project-container {
@@ -27,6 +28,11 @@
 }
 
 .header {
+    display: flex;
+    flex-direction: column;
+}
+
+.txt {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -42,6 +48,10 @@ h2 {
 a {
     margin-left: auto;
     text-align: right;
+}
+
+.header > p {
+    margin: 10px 0;
 }
 
 img {
